@@ -1,0 +1,17 @@
+# Danh sách người chơi và điểm số của họ
+players = [
+    {'name': 'Player 1', 'score': 250},
+    {'name': 'Player 2', 'score': 180},
+    {'name': 'Player 3', 'score': 300},
+    {'name': 'Player 4', 'score': 220}
+]
+
+# Sắp xếp danh sách theo điểm số (từ cao đến thấp)
+sorted_players = sorted(players, key=lambda x: x['score'], reverse=True)
+
+# Gán thứ hạng cho mỗi người chơi
+for rank, player in enumerate(sorted_players, start=1):
+    player['rank'] = rank
+
+# In ra kết quả
+for player in
