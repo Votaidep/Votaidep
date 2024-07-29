@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Con Ruồi</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <div class="fly"></div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
+/* styles.css */
+body, html {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    background-color: #f0f0f0;
+}
+
+.container {
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.fly {
+    width: 20px;
+    height: 20px;
+    background-color: black;
+    border-radius: 50%;
+    position: absolute;
+    transition: transform 0.5s ease;
+}
+// script.js
+document.addEventListener("DOMContentLoaded", function() {
+    const fly = document.querySelector('.fly');
+
+    function moveFly() {
+        const maxWidth = window.innerWidth - fly.offsetWidth;
+        const maxHeight = window.innerHeight - fly.offsetHeight;
+
+        const randomX = Math.floor(Math.random() * maxWidth);
+        const randomY = Math.floor(Math.random() * maxHeight);
+
+        fly.style.transform = `translate(${randomX}px, ${randomY}px)`;
+    }
+
+    setInterval(moveFly, 1000); // Di chuyển con ruồi mỗi giây
+});
+
